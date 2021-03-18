@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Czas generowania: 18 Mar 2021, 17:23
--- Wersja serwera: 10.4.11-MariaDB
--- Wersja PHP: 7.4.1
+-- Host: localhost
+-- Czas generowania: 18 Mar 2021, 18:42
+-- Wersja serwera: 10.4.18-MariaDB
+-- Wersja PHP: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -30,9 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `todo_lists` (
                               `id` bigint(20) UNSIGNED NOT NULL,
-                              `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-                              `created_at` timestamp NULL DEFAULT NULL,
-                              `updated_at` timestamp NULL DEFAULT NULL
+                              `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -45,9 +42,7 @@ CREATE TABLE `users` (
                          `id` bigint(20) UNSIGNED NOT NULL,
                          `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
                          `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-                         `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-                         `created_at` timestamp NULL DEFAULT NULL,
-                         `updated_at` timestamp NULL DEFAULT NULL
+                         `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -68,7 +63,7 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT dla tabel zrzutów
+-- AUTO_INCREMENT dla zrzuconych tabel
 --
 
 --
